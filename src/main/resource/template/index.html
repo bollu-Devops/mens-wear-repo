@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>MenStyle</title>
+
+    <link rel="stylesheet"
+          href="/css/style.css">
+
+</head>
+
+<body>
+
+
+<!-- Navigation -->
+
+<header class="navbar">
+
+    <div class="logo">
+        MEN<span>STYLE</span>
+    </div>
+
+    <nav>
+
+        <a href="/">Home</a>
+        <a href="#">Shirts</a>
+        <a href="#">T-Shirts</a>
+        <a href="#">Jeans</a>
+        <a href="#">Jackets</a>
+
+    </nav>
+
+</header>
+
+
+<!-- Hero Section -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p>NEW COLLECTION</p>
+
+        <h1>
+            Style that
+            <br>
+            speaks for you.
+        </h1>
+
+        <p class="description">
+
+            Discover modern men's fashion
+            designed for everyday confidence.
+
+        </p>
+
+        <button>
+            Shop Now
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- Products -->
+
+<section class="products">
+
+    <div class="section-heading">
+
+        <p>OUR COLLECTION</p>
+
+        <h2>Trending Products</h2>
+
+    </div>
+
+
+    <div class="product-grid">
+
+        <div class="product-card"
+             th:each="product : ${products}">
+
+            <div class="image-container">
+
+                <img
+                    th:src="${product.image}"
+                    th:alt="${product.name}">
+
+            </div>
+
+
+            <div class="product-info">
+
+                <small
+                    th:text="${product.category}">
+                </small>
+
+                <h3
+                    th:text="${product.name}">
+                </h3>
+
+                <div class="bottom">
+
+                    <strong
+                        th:text="${product.price}">
+                    </strong>
+
+                    <button>
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <h3>MENSTYLE</h3>
+
+    <p>
+        Modern fashion for modern men.
+    </p>
+
+    <p>
+        © 2026 MenStyle. All rights reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
